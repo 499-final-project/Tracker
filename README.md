@@ -1,6 +1,6 @@
 # Tracker
 
-CSCI 499 final
+CSCI 499 project
 
 # Getting Started with Create React App
 
