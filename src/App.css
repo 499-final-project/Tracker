@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1f0e61;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -40,6 +40,54 @@
 .header{
   height: 100px;
   width: 100%;
-  background-color : #f3c1cf;
+  background-color : #f7d9ee;
   padding-top: 50px;
+}
+.card-container{
+  height: 300px;
+  width: 300px;
+  box-shadow: 0px 3px 50px #A5A5A5;
+}
+
+.card-wrapper{
+  width: 270px; 
+  height: 200px; 
+  box-shadow: 0px 3px 50px #A5A5A5;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere; 
+  overflow: auto;
+}
+
+.card-top{
+  width: 100%;
+  height: 2%;
+}
+
+.task-holder{
+  width: 100%;
+  height: 98%;
+  padding: 10px 10px;
+  display : flex;
+  flex-direction: column;
+  background-color: #93b4cc;
+  position: relative;
+}
+
+.card-header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 80px;
+  height: 30px;
+  padding: 1px 1px !important;
+  text-align: center;
+}
+
+.task-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fcfcfc;
+  padding : 40px 100px;
 }

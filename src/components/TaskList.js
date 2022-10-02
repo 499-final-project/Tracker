@@ -1,32 +1,33 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NewTask from '../Views/NewTask'
-
+import TaskVisual from './TaskVisual.js';
 
 const TaskList = () => {
-    const [modal,setModal] = useState(false);
-    const [taskList] = useState([])
+    const [modal,Popup] = useState(false);
+    const [taskList, setTaskList] = useState([])
     
     const toggle = () => 
     {
-        setModal(!modal);
+        Popup(!modal);
     }
 
     const addTask=(input) =>
     {
         taskList.push(input)
-        setModal(false)
+        Popup(false)
     }
     return (
         <>
             <div className = "header text-center">
                 <h3>Task List</h3>
-                <button  onClick = {() => setModal(true)} >Create Task</button>
+                <button className = " mt-3"   onClick = {() => Popup(true)} >Create Task</button>
             </div>
-            <div className = "taskContainer"> 
+            <div className = "task-container "> 
             <br></br>
-                {taskList.map((obj) => <li>{obj.Name} , {obj.Description}</li>)}
+                {taskList.map((obj, index) => <TaskVisual input = {obj} index = {index}></TaskVisual>)}
             </div>
             <NewTask toggle = {toggle} modal = {modal} add = {addTask}/>
+            
         </>
     );
 };
