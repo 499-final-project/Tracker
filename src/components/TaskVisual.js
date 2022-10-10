@@ -2,14 +2,15 @@ import React, {useState} from 'react';
 import EditTask from '../Views/EditTask'
 
 const TaskVisual = ({input, index, deleteTask, editList}) => {
-    const [modal, setModal] = useState(false);
+    const [modal, Popup] = useState(false);
 
     const toggle = () => {
-        setModal(!modal);
+        Popup(!modal);
     }
 
     const editTask = (obj) => {
         editList(obj, index)
+        Popup(false)
     }
 
     const handleDelete = () => {
@@ -24,7 +25,7 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
                 <p className = "mt-3">{input.Description}</p>
                 
                 <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
-                    <button  onClick = {() => setModal(true)}  >Edit</button>
+                    <button  onClick = {() => Popup(true)}  >Edit</button>
                     <button  onClick = {handleDelete}>Delete</button>
                 </div>
         </div>
