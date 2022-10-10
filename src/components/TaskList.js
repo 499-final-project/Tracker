@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import NewTask from '../Views/NewTask'
-import TaskVisual from './TaskVisual.js';
+import TaskVisual from './TaskVisual';
 
 const TaskList = () => {
     const [modal,Popup] = useState(false);
-    const [taskList, setTaskList] = useState([])
+    const [taskList,setTaskList] = useState([])
+   
     
     const toggle = () => 
     {
@@ -16,6 +17,17 @@ const TaskList = () => {
         taskList.push(input)
         Popup(false)
     }
+
+    const deleteTask = (index) => {
+        taskList.splice(index,1)
+        setTaskList([...taskList])
+    }
+    const editList = (obj, index) => {
+        taskList[index] = obj
+        setTaskList([...taskList])
+        Popup(false)
+    }
+
     return (
         <>
             <div className = "header text-center">
@@ -24,7 +36,7 @@ const TaskList = () => {
             </div>
             <div className = "task-container "> 
             <br></br>
-                {taskList.map((obj, index) => <TaskVisual input = {obj} index = {index}></TaskVisual>)}
+                {taskList.map((obj, index) => <TaskVisual input = {obj} index = {index} deleteTask = {deleteTask} editList = {editList}></TaskVisual>)}
             </div>
             <NewTask toggle = {toggle} modal = {modal} add = {addTask}/>
             

@@ -32,7 +32,7 @@ const NewTask = ({modal, toggle, add}) => {
         taskBox.Name = taskName
         taskBox.Description = description
         add(taskBox)
-
+        
     }
     
     return (

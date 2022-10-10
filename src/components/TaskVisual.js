@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-//import EditTask from '../modals/EditTask'
+import EditTask from '../Views/EditTask'
 
-const TaskVisual = ({input, index, deleteTask, updateListArray}) => {
-    const [modal, setModal] = useState(false);
+const TaskVisual = ({input, index, deleteTask, editList}) => {
+    const [modal, Popup] = useState(false);
 
     const toggle = () => {
-        setModal(!modal);
+        Popup(!modal);
     }
 
-    const updateTask = (obj) => {
-        updateListArray(obj, index)
+    const editTask = (obj) => {
+        editList(obj, index)
+        Popup(false)
     }
 
     const handleDelete = () => {
@@ -24,10 +25,11 @@ const TaskVisual = ({input, index, deleteTask, updateListArray}) => {
                 <p className = "mt-3">{input.Description}</p>
                 
                 <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
-                    <i class = "far fa-edit mr-3" style={{"color" : "#5DC250"}}></i>
-                    <i class="fas fa-trash-alt" style = {{"color" : "#5DC250"}}></i>
+                    <button  onClick = {() => Popup(true)}  >Edit</button>
+                    <button  onClick = {handleDelete}>Delete</button>
                 </div>
         </div>
+        <EditTask modal = {modal} toggle = {toggle} editTask = {editTask} input = {input}/>
         </div>
     );
 };
