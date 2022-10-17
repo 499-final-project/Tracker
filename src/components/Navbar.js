@@ -18,7 +18,7 @@ function Navbar() {
             </div>
             <div className = "rightSide">
                 <MenuItems/>
-                <img src = {Menu} className="dropDownMenus"/>
+                <img  alt = "menu"src = {Menu} className="dropDownMenus"/>
             </div>
         </div>
      );
