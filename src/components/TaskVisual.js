@@ -24,7 +24,7 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
                 <span class = "card-header" style={{"background-color": "#F2FAF1", "border-radius": "10px"}}>{input.Name}</span>
                 <p className = "mt-3">{input.Description}</p>
                 
-                <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
+                <div style={{"position": "static", "right" : "20px", "bottom" : "20px"}}>
                     <button  onClick = {() => Popup(true)}  >Edit</button>
                     <button  onClick = {handleDelete}>Delete</button>
                 </div>
