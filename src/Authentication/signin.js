@@ -21,8 +21,8 @@ const {SignInWithGoogle} = useContext(AuthContext);
    const email = result.user.email;
    const profilePic = result.user.photoURL;
 
-   if(!result.user.uid)
-    {writeUserData(result.user.uid, name, email, profilePic);}
+  
+    writeUserData(result.user.uid, name, email, profilePic);
 
    localStorage.setItem("name", name);
    localStorage.setItem("email", email);
@@ -37,6 +37,7 @@ const {SignInWithGoogle} = useContext(AuthContext);
 }
  return (
  <>
+ 
     <button  onClick={handlesubmit}>Sign in with google</button>
  </>
  )
