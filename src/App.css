@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
 }
 
 .App-logo {
@@ -40,8 +41,8 @@
 .header{
   height: 100px;
   width: 100%;
-  background-color : #c9dbf9;
-  padding-top: 50px;
+  background-color : #f2f6fd;
+  padding-top: 10px;
 }
 .card-container{
   height: 300px;
