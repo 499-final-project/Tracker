@@ -30,7 +30,7 @@ const EditTask = ({modal, toggle, editTask, input}) => {
     useEffect(() => {
         setTaskName(input.Name)
         setDescription(input.Description)
-    },[])
+    },[input.Name, input.Description])
 
     const handleUpdate = (e) => {
         e.preventDefault();
