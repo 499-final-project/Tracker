@@ -1,15 +1,29 @@
 import Navbar from './Navbar';
+import ContactForm from './ContactForm';
 const ContactUs = () => {
     return (
+      
       <div >
         <Navbar />
-        <div> 
+        
+        <div>
             <h1>Contact Us</h1>
         </div>
-        <h2>Name:</h2>
-        <h2>Email: </h2>
-        <h2>Phone Number: </h2>
-        <h3>work in progress...</h3>
+        
+        <div className= "contact info" >
+        <b>Adress</b>
+        <a href="">695 Park Ave, New York, NY 10065</a>
+        <br></br>
+        <b >Email:</b>
+        <a href="">exampleEmail@email.com</a>
+        <br></br>
+        <b>Phone: </b>
+        <a href="tel:212-772-4000">212-123-1234</a>
+        </div>
+        <div>
+        <ContactForm></ContactForm>
+        </div>
+        
       </div>
     );    
   }
