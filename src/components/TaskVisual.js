@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState, useContext, } from 'react';
 import EditTask from '../Views/EditTask'
+import {ref, remove, update } from 'firebase/database';
+import { AuthContext } from '../Authentication/AuthContext';
+import { db } from '../firebase';
 
 const TaskVisual = ({input, index, deleteTask, editList}) => {
+    const {currentUser} = useContext(AuthContext);
     const [modal, Popup] = useState(false);
 
     const toggle = () => {
@@ -9,13 +13,30 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
     }
 
     const editTask = (obj) => {
+        update(ref(db, 'tasks/'+ currentUser.uid + '/' + obj.key),{
+            Name: obj.Name,
+            Description: obj.Description
+        });
         editList(obj, index)
         Popup(false)
     }
 
     const handleDelete = () => {
-        deleteTask(index)
+       
+        remove(ref(db, 'tasks/'+ currentUser.uid + '/' + input.key));
+        deleteTask(index);
     }
+/*
+    useEffect(()=>{
+        async function DeleteTask(key){
+            const {currentUser} = useContext(AuthContext);
+            await remove(db, 'tasks/'+ currentUser.uid + '/' + key);
+             return true;
+           }
+          DeleteTask(input.key);
+          
+    },[input.key])
+*/
 
     return (
         <div class = "card-wrapper m-sm-5">

@@ -18,7 +18,7 @@ function MenusItems() {
 
             <a className = "more" href = "/#" >More</a>
             <img alt = "arrow"className = "arrow" src = {arrow}/>
-            <img alt ="saddg" className = "search" src = {search}/>
+            <img alt ="magnifying-glass" className = "search" src = {search}/>
             <img alt = "owl" className = "biden" src = {biden}/>
            
             

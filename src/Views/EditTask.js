@@ -4,11 +4,12 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 const EditTask = ({modal, toggle, editTask, input}) => {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
-
+    const [key, setKey] = useState('')
     let taskBox = 
     {
         Name:'',
-        Description:''
+        Description:'',
+        key: ''
     }
 
     const handleChange = (e) => {
@@ -30,16 +31,18 @@ const EditTask = ({modal, toggle, editTask, input}) => {
     useEffect(() => {
         setTaskName(input.Name)
         setDescription(input.Description)
-    },[input.Name, input.Description])
+        setKey(input.key)
+    },[input.Name, input.Description, input.key])
 
     const handleUpdate = (e) => {
         e.preventDefault();
         taskBox.Name = taskName
         taskBox.Description = description
+        taskBox.key = key
         editTask(taskBox)
         
     }
-
+    
     return (
         <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Update Task</ModalHeader>

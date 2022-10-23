@@ -2,17 +2,18 @@ import React, { useContext, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { writeTaskData } from '../Authentication/dbwriteuser';
 import { AuthContext } from '../Authentication/AuthContext';
-const NewTask = ({modal, toggle, add}) => {
+
+ const NewTask = ({modal, toggle, add}) => {
     const {currentUser} = useContext(AuthContext);
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
-    
-    let taskBox = 
+let taskBox = 
     {
         Name:'',
-        Description:''
+        Description:'',
+        key:''
     }
-
+ 
     const handleInput = (e) => 
     {
         const {name, value} = e.target
@@ -27,18 +28,18 @@ const NewTask = ({modal, toggle, add}) => {
         }
     }
     
-    
+
     const handleAdd = (e) => {
         e.preventDefault()
         taskBox.Name = taskName
         taskBox.Description = description
-        writeTaskData(currentUser.uid, taskName, description)
+        taskBox.key = writeTaskData(currentUser.uid, taskName, description)
         add(taskBox)
         
     }
     
     return (
-        <Modal isOpen={modal} toggle={toggle}>
+        <Modal isOpen={modal} toggle={toggle} >
             <ModalHeader toggle={toggle}>New Task</ModalHeader>
             <ModalBody>
             <div className = "form-group">
@@ -62,3 +63,5 @@ const NewTask = ({modal, toggle, add}) => {
 };
 
 export default NewTask;
+
+
