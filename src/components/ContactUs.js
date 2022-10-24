@@ -11,7 +11,7 @@ const ContactUs = () => {
         </div>
         
         <div className= "contact info" >
-        <b>Adress</b>
+        <b>Address</b>
         <a href="">695 Park Ave, New York, NY 10065</a>
         <br></br>
         <b >Email:</b>
