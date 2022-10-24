@@ -10,7 +10,7 @@ app.use(express.json());
 
 const transport= nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key: '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'
+        api_key: ''
     }
 }))
 
