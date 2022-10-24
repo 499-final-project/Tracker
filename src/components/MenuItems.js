@@ -12,7 +12,6 @@ function MenusItems() {
         <div className = "menu">
             <li><Link to= "/">Home</Link></li>
             <li><Link to= "/TaskList">Task List</Link></li>
-            <li><Link to= "/ContactUs">Contact Us</Link></li>
             <a className = "more" href = "#" >More</a>
             <img className = "arrow" src = {arrow}/>
             <img className = "search" src = {search}/>
