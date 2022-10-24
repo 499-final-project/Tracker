@@ -35,7 +35,23 @@ let taskBox =
         taskBox.Description = description
         taskBox.key = writeTaskData(currentUser.uid, taskName, description)
         add(taskBox)
-        
+        let email = {
+            to:'0trackertest0@gmail.com',
+            from:'trackertesting499@gmail.com',
+            subject:`Tracker Notification`,
+            text:`Your new Task: ${taskBox.Name}<br>
+            Details:${taskBox.Description}<br>
+            Has been added to your task list.`
+
+        }
+        fetch('http://localhost:4000/send-email',{
+            method:'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify(email)
+            
+        }).then((resp)=>{
+            console.log('email sent',resp)
+        })
     }
     
     return (

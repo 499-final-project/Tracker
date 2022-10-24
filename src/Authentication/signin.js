@@ -28,7 +28,7 @@ const {SignInWithGoogle} = useContext(AuthContext);
    localStorage.setItem("email", email);
    localStorage.setItem("profilePic", profilePic);
    console.log('login success');
-   history("/home");
+   history("/");
  } catch (error) {
   console.log(error);
  }

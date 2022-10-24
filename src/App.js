@@ -1,7 +1,7 @@
 
 import './App.css';
 import { SignInWithGoogle1  } from './Authentication/signin';
-import {Homepage} from './Authentication/homepage';
+import {Logout} from './Authentication/logout';
 import {AuthProvider} from './Authentication/AuthContext'
 import {BrowserRouter, Route, Routes}from 'react-router-dom';
 import PrivateRoutes from './Authentication/PrivateRoute';
@@ -27,7 +27,7 @@ function App() {
          
           <Route element={<PrivateRoutes />}>
             <Route path="/tasklist" element={<TaskList/>} />
-            <Route exact path="/home" element={<Homepage/>} /> 
+            <Route exact path="/home" element={<Logout/>} /> 
             <Route exact path="/UpcomingTask" element={<UpcomingTask/>} />
           
         
