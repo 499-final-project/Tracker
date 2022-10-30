@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import EditTask from '../Views/EditTask'
+import edit from '../icons/edit-icon.png'
+import deletes from '../icons/delete-icon.png'
 
 const TaskVisual = ({input, index, deleteTask, editList}) => {
     const [modal, Popup] = useState(false);
@@ -25,8 +27,8 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
                 <p className = "mt-3">{input.Description}</p>
                 
                 <div style={{"position": "static", "right" : "20px", "bottom" : "20px"}}>
-                    <button  onClick = {() => Popup(true)}  >Edit</button>
-                    <button  onClick = {handleDelete}>Delete</button>
+                    <button  onClick = {() => Popup(true)}  ><img className = "edit" img style = {{ width: 25, height: 25 }} src = {edit} alt = "Edit" /></button>
+                    <button  onClick = {handleDelete}><img className = "deletes" img style = {{ width: 25, height: 25 }} src = {deletes} alt = "Delete" /></button>
                 </div>
         </div>
         <EditTask modal = {modal} toggle = {toggle} editTask = {editTask} input = {input}/>
