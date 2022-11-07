@@ -28,17 +28,20 @@ const  TaskList = () => {
   const addTask= (input) =>
     {
         taskList.push(input)
+        searchResults.push(input)
         Popup(false)
     }
     
     const DeleteTask = (index) => {
        taskList.splice(index,1)
-     setTaskList([...taskList])  
+     setTaskList([...taskList])
+     setSearchResults([...taskList]) 
  }
  
     const editList = (obj, index) => {
         taskList[index] = obj
         setTaskList([...taskList])
+        setSearchResults([...taskList]) 
         Popup(false)
     }
     
@@ -133,7 +136,8 @@ search(value);
             <div className = "task-container "> 
             <br></br>
                 
-                {searchResults.map((obj, index) => <TaskVisual input = {obj} index = {index} deleteTask = {DeleteTask} editList = {editList}></TaskVisual>)}
+               {searchInput === null ? taskList.map((obj, index) => <TaskVisual input = {obj} index = {index} deleteTask = {DeleteTask} editList = {editList}></TaskVisual>) :
+                searchResults.map((obj, index) => <TaskVisual input = {obj} index = {index} deleteTask = {DeleteTask} editList = {editList}></TaskVisual>) }
             </div>
             <NewTask toggle = {toggle} modal = {modal} add = {addTask}/>
             
