@@ -9,7 +9,8 @@ const NewTask = ({modal, toggle, add}) => {
     let taskBox = 
     {
         Name:'',
-        Description:''
+        Description:'',
+        Image: ''
     }
 
     const handleInput = (e) => 
