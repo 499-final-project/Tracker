@@ -8,7 +8,8 @@ const EditTask = ({modal, toggle, editTask, input}) => {
     let taskBox = 
     {
         Name:'',
-        Description:''
+        Description:'',
+        Image: ''
     }
 
     const handleChange = (e) => {
@@ -34,6 +35,7 @@ const EditTask = ({modal, toggle, editTask, input}) => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
+        taskBox = input
         taskBox.Name = taskName
         taskBox.Description = description
         editTask(taskBox)
