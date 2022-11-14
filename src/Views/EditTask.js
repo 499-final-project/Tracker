@@ -1,15 +1,21 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import DateTimePicker from 'react-datetime-picker';
 
 const EditTask = ({modal, toggle, editTask, input}) => {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
     const [key, setKey] = useState('')
+    const [startdate, setStartDate] = useState(new Date());
+    const [enddate, setEndDate] = useState(new Date());
     let taskBox = 
     {
         Name:'',
         Description:'',
-        key: ''
+        key: '',
+        Image: '',
+        Startdate: '',
+        Enddate: ''
     }
 
     const handleChange = (e) => {
@@ -32,13 +38,17 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         setTaskName(input.Name)
         setDescription(input.Description)
         setKey(input.key)
-    },[input.Name, input.Description, input.key])
+        setStartDate(new Date(input.Startdate))
+        setEndDate(new Date(input.Enddate))
+    },[input.Name, input.Description, input.key, input.Startdate, input.Enddate])
 
     const handleUpdate = (e) => {
         e.preventDefault();
         taskBox.Name = taskName
         taskBox.Description = description
         taskBox.key = key
+        taskBox.Startdate = startdate.getTime()
+        taskBox.Enddate = enddate.getTime()
         editTask(taskBox)
         
     }
@@ -58,7 +68,14 @@ const EditTask = ({modal, toggle, editTask, input}) => {
                         <textarea rows = "5" className = "form-control" value = {description} 
                         onChange = {handleChange} name = "description"></textarea>
                     </div>
-                
+                    <div>
+                <label>start</label>
+                <DateTimePicker  onChange={setStartDate}  value={startdate} />
+            </div>
+            <div >
+                <label>end</label>
+                <DateTimePicker  onChange={setEndDate}  value={enddate} /> 
+            </div>
             </ModalBody>
             <ModalFooter>
             <Button color="primary" onClick={handleUpdate}>Update</Button>{' '}

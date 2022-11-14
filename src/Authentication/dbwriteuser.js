@@ -17,12 +17,14 @@ export function writeUserData(userId, name, email, imageUrl) {
   return(console.log("User added to db"))
 }
 
-export function writeTaskData(userId, Taskname, taskDescription) {
+export function writeTaskData(userId, Taskname, taskDescription, startDate, endDate) {
   
  let post =push(ref(db, 'tasks/'+ userId ),
   {
     Name: Taskname,
     Description: taskDescription,
+    Startdate: startDate,
+    Enddate: endDate
     
   });
   return(post.key)

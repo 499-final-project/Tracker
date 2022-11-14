@@ -2,18 +2,30 @@ import React, { useContext, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { writeTaskData } from '../Authentication/dbwriteuser';
 import { AuthContext } from '../Authentication/AuthContext';
+import  DateTimePicker  from 'react-datetime-picker';
 
  const NewTask = ({modal, toggle, add}) => {
     const {currentUser} = useContext(AuthContext);
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
+    const [startdate, setStartDate] = useState(new Date());
+    const [enddate, setEndDate] = useState(new Date());
+
 let taskBox = 
     {
         Name:'',
         Description:'',
-        key:''
+        key:'',
+        Image: '',
+        Startdate: '',
+        Enddate: ''
     }
  
+    //function to turn string into date
+    //function parseDate(str) {
+       // var mdy = str.split('-');
+       // return new Date(mdy[0], mdy[1]-1, mdy[2]);
+   // }
     const handleInput = (e) => 
     {
         const {name, value} = e.target
@@ -26,6 +38,10 @@ let taskBox =
         {
             setDescription(value)
         }
+       
+
+        
+        
     }
     
 
@@ -33,8 +49,11 @@ let taskBox =
         e.preventDefault()
         taskBox.Name = taskName
         taskBox.Description = description
-        taskBox.key = writeTaskData(currentUser.uid, taskName, description)
+        taskBox.Startdate = startdate.getTime()
+        taskBox.Enddate = enddate.getTime()
+        taskBox.key = writeTaskData(currentUser.uid, taskName, description, taskBox.Startdate, taskBox.Enddate)
         add(taskBox)
+        /*
         let email = {
             to:'0trackertest0@gmail.com',
             from:'trackertesting499@gmail.com',
@@ -52,6 +71,7 @@ let taskBox =
         }).then((resp)=>{
             console.log('email sent',resp)
         })
+        */
     }
     
     return (
@@ -68,16 +88,26 @@ let taskBox =
                 <textarea rows = "5" className = "form-control" value = {description}
                 onChange = {handleInput} name = "description"></textarea>
             </div>
-                
+            <div>
+                <label>start</label>
+                <DateTimePicker  onChange={setStartDate}  value={startdate} />
+            </div>
+            <div >
+                <label>end</label>
+                <DateTimePicker  onChange={setEndDate}  value={enddate} /> 
+            </div>
+            
+            
+
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={handleAdd}>Create</Button>{' '}
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
+            <Button color="primary" onClick={handleAdd}>Create</Button>
+            <Button color="secondary" onClick={toggle}>Cancel</Button> 
             </ModalFooter>
       </Modal>
     );
 };
-
+/* */
 export default NewTask;
 
 

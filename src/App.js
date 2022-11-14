@@ -6,12 +6,11 @@ import {AuthProvider} from './Authentication/AuthContext'
 import {BrowserRouter, Route, Routes}from 'react-router-dom';
 import PrivateRoutes from './Authentication/PrivateRoute';
 import TaskList from './components/TaskList'
-//import { Nav } from 'reactstrap';
-
 import UpcomingTask from './components/UpcomingTask'
 import ContactUs from './components/ContactUs'
 import HomePageContainer from './components/HomePageContainer'
 import  Navbar  from './components/Navbar';
+import TaskCalander from './components/TaskCalander';
 function App() {
 
   
@@ -29,7 +28,7 @@ function App() {
             <Route path="/tasklist" element={<TaskList/>} />
             <Route exact path="/home" element={<Logout/>} /> 
             <Route exact path="/UpcomingTask" element={<UpcomingTask/>} />
-          
+           <Route exact path="/TaskCalander" element={<TaskCalander/>} />
         
           </Route>
           <Route exact path="/ContactUs" element={<ContactUs/>} />
