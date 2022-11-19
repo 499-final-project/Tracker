@@ -35,7 +35,7 @@ const TaskList = () => {
             <Navbar />
             <div>
                 <h1>Task List</h1>
-                <button className = " mt-3"   onClick = {() => Popup(true)} >Create Task</button>
+                <button className = "button-62" onClick = {() => Popup(true)} >Create Task</button>
             </div>
             <div className = "task-container "> 
             <br></br>
