@@ -15,6 +15,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 20px;
 }
 
 .arrow{
@@ -28,21 +29,11 @@ a{
     padding-left: 1.5vw;
 }
 
-.biden{
-    display: flex;
-    height: 8.5vh;
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
-}
-
 @media only screen and (max-width: 500px){
     a{
         display: none;
     }
     .search{
-        display: none;
-    }
-    .biden{
         display: none;
     }
     .arrow{

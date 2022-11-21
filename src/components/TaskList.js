@@ -5,7 +5,7 @@ import { get, ref } from 'firebase/database';
 import { AuthContext } from '../Authentication/AuthContext';
 import { db } from '../firebase';
 import {useLocation} from "react-router-dom";
-
+import '../styles/TaskList.css';
 
 
 
@@ -127,14 +127,20 @@ search(value);
     return (
         <>
             <div>
-            
-            <div>
                 <h1>Task List</h1>
-                <div>
+             <button className = "button-62"   onClick = {() => Popup(true)} >Create Task</button>
+             <div>
+
+
+
+             </div>
+            <div>
+                
+                <div className = 'bar'>
                 {location.pathname === '/TaskList' ?  <>
-            <input type="text" placeholder="Search" onChange={handleSearchChange}></input></>  : null}
+            <input className ='search' type="search" placeholder="Search" onChange={handleSearchChange} ></input></>  : null}
             </div>
-                <button className = " mt-3"   onClick = {() => Popup(true)} >Create Task</button>
+               
                
             </div>
             <div className = "task-container "> 

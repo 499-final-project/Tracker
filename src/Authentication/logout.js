@@ -19,7 +19,7 @@ async function handlelogout(e){
 };
 return (
     <>
-    <button onClick={handlelogout}>Logout</button>
+    <button className='button-62' onClick={handlelogout}>Logout</button>
     </>
 )
 }

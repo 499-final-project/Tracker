@@ -7,7 +7,7 @@ import { get, ref } from 'firebase/database';
 import { db } from '../firebase';
 //npm i react-vertical-timeline-component maybe add timeline
 //react-calendar-timeline or  this 
-const TaskCalander = () => {
+const TaskCalendar = () => {
    //
    const [date, setDate] = useState([]);
    const {currentUser} = useContext(AuthContext);
@@ -124,4 +124,4 @@ Readdbonce();
 
         );
 }
-export default TaskCalander;
+export default TaskCalendar;

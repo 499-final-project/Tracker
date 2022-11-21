@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import NewContact from '../Views/NewContact';
+
 const ContactForm = () => {
     const [modal,Popup] = useState(false);
 const [taskList,/*setTaskList*/] = useState([])
@@ -19,6 +20,7 @@ const [taskList,/*setTaskList*/] = useState([])
 
     return (
         <>
+       
             <div>
                 <button className = " mt-3"   onClick = {() => Popup(true)} >Contact</button>
             </div>

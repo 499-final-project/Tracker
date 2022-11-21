@@ -10,7 +10,7 @@ import UpcomingTask from './components/UpcomingTask'
 import ContactUs from './components/ContactUs'
 import HomePageContainer from './components/HomePageContainer'
 import  Navbar  from './components/Navbar';
-import TaskCalander from './components/TaskCalander';
+import TaskCalendar from './components/TaskCalendar';
 function App() {
 
   
@@ -28,8 +28,8 @@ function App() {
             <Route path="/tasklist" element={<TaskList/>} />
             <Route exact path="/home" element={<Logout/>} /> 
             <Route exact path="/UpcomingTask" element={<UpcomingTask/>} />
-           <Route exact path="/TaskCalander" element={<TaskCalander/>} />
-        
+           <Route exact path="/TaskCalendar" element={<TaskCalendar/>} />
+           
           </Route>
           <Route exact path="/ContactUs" element={<ContactUs/>} />
         </Routes>

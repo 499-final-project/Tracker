@@ -45,7 +45,7 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
 
     return (
         
-        <div class = "card-wrapper m-sm-5">
+        <div class = "card-wrapper m-sm-5" style={{ display: "flex" }}>
             <div class = "card-top" ></div>
             <div class = "task-holder">
                 <span class = "card-header" style={{"background-color": "#F2FAF1", "border-radius": "10px"}}>{input.Name}</span>
@@ -62,8 +62,8 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
                     <button  onClick = {() => PopupImage(true)}  ><img className = "image" img style = {{ width: 25, height: 25 }} src = {image} alt = "image1" /></button>
                 </div>
         </div>
-        <EditTask modal = {modal} toggle = {toggle} editTask = {editTask} input = {input}/>
-        <NewImage modal = {imageModal} toggle = {imgToggle} editImage = {editImage} input = {input}/>
+        <EditTask modal = {modal} toggle = {toggle} editTask = {editTask} input = {input} />
+        <NewImage modal = {imageModal} toggle = {imgToggle} editImage = {editImage} input = {input} />
         </div>
     );
 };

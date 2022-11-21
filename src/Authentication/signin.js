@@ -38,7 +38,7 @@ const {SignInWithGoogle} = useContext(AuthContext);
  return (
  <>
  
-    <button  onClick={handlesubmit}>Sign in with google</button>
+    <button className="button-62" onClick={handlesubmit}>Sign in with google</button>
  </>
  )
 }
