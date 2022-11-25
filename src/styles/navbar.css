@@ -19,7 +19,7 @@
 }
 .nav .leftSide{
     height: 50%;
-    flex: 50%;
+    flex: 30%;
     display:flex;
 }
 .timeContainer{
@@ -31,7 +31,7 @@
 
 }
 .nav .rightSide{
-    flex: 50%;
+    flex: 70%;
     display:flex;
     justify-content: right;
 }
