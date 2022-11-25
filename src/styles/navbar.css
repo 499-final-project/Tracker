@@ -3,7 +3,7 @@
     height: 100px;
     display:flex;
     font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
-    background-color: rgb(198, 224, 246)
+    background-color: var(--nav-color);
     
 }
 

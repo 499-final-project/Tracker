@@ -1,10 +1,37 @@
+:root{
+    --text-color: black;
+    --text-color-hover: white;
 
-a{
-    font-size:1.4vw;
+    --background-color: white;
+    --nav-color: #4394D1
+}
+
+.dark{
+    --text-color: white;
+    --text-color-hover: yellow;
+
+    --background-color:#2A2B33;
+    --nav-color: black;
+}
+
+*{
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--background-color) !important;
+}
+
+li a{
+    font-size:20pt;
     padding-left: 1vw;
     padding-right: 1vw;
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
+}
+
+li a:hover{
+    color: var(--text-color-hover);
 }
 
 .more{
@@ -27,6 +54,15 @@ a{
     display: flex;
     height: 4vh;
     padding-left: 1.5vw;
+}
+
+#toggleDark{
+    height: auto;
+    width: 30%;
+}
+
+#toggleDark:hover{
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 500px){
