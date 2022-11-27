@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { writeTaskData } from '../Authentication/dbwriteuser';
 import { AuthContext } from '../Authentication/AuthContext';
+import { sendemail } from '../Emailing/Sendemail';
 import  DateTimePicker  from 'react-datetime-picker';
 
  const NewTask = ({modal, toggle, add}) => {
@@ -10,6 +11,7 @@ import  DateTimePicker  from 'react-datetime-picker';
     const [description, setDescription] = useState('');
     const [startdate, setStartDate] = useState(new Date());
     const [enddate, setEndDate] = useState(new Date());
+    const [notify, setNotify] = useState('');
 
 let taskBox = 
     {
@@ -18,7 +20,8 @@ let taskBox =
         key:'',
         Image: '',
         Startdate: '',
-        Enddate: ''
+        Enddate: '',
+        Notify: '',
     }
  
     //function to turn string into date
@@ -38,8 +41,10 @@ let taskBox =
         {
             setDescription(value)
         }
-       
-
+        else if (name === "notify")
+        {
+            setNotify(value)
+        }
         
         
     }
@@ -51,27 +56,10 @@ let taskBox =
         taskBox.Description = description
         taskBox.Startdate = startdate.getTime()
         taskBox.Enddate = enddate.getTime()
+        taskBox.Notify= notify
         taskBox.key = writeTaskData(currentUser.uid, taskName, description, taskBox.Startdate, taskBox.Enddate)
         add(taskBox)
-        /*
-        let email = {
-            to:'0trackertest0@gmail.com',
-            from:'trackertesting499@gmail.com',
-            subject:`Tracker Notification`,
-            text:`Your new Task: ${taskBox.Name}<br>
-            Details:${taskBox.Description}<br>
-            Has been added to your task list.`
-
-        }
-        fetch('http://localhost:4000/send-email',{
-            method:'POST',
-            headers:{'Content-Type': 'application/json'},
-            body:JSON.stringify(email)
-            
-        }).then((resp)=>{
-            console.log('email sent',resp)
-        })
-        */
+        sendemail(taskName,description,startdate,5);
     }
     
     return (
@@ -89,14 +77,24 @@ let taskBox =
                 onChange = {handleInput} name = "description"></textarea>
             </div>
             <div>
-                <label>start</label>
+                <label>start</label><br></br>
                 <DateTimePicker  onChange={setStartDate}  value={startdate} />
             </div>
             <div >
-                <label>end</label>
+                <label>end</label><br></br>
                 <DateTimePicker  onChange={setEndDate}  value={enddate} /> 
             </div>
-            
+            <div className = "form-group">
+                <label>Notify Me (Optional)</label>
+                <select className = "form-control"  onChange = {handleInput} name = "notify" defaultValue={notify||"0"}>
+                    <option value="0">--Choose Alert--</option>
+                    <option value="1">1 week before</option>
+                    <option value="2">1 day before</option>
+                    <option value="3">12 hours before</option>
+                    <option value="4">1 hour before</option>
+                    <option value="5">10 minutes before</option>
+                </select>
+            </div>
             
 
             </ModalBody>
