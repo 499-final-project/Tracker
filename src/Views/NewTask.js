@@ -59,7 +59,7 @@ let taskBox =
         taskBox.Notify= notify
         taskBox.key = writeTaskData(currentUser.uid, taskName, description, taskBox.Startdate, taskBox.Enddate)
         add(taskBox)
-        sendemail(taskName,description,startdate,5);
+        sendemail(taskName,description,startdate,notify);
     }
     
     return (
