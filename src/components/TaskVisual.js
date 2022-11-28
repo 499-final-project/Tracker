@@ -9,6 +9,7 @@ import edit from '../icons/edit-icon.png'
 import deletes from '../icons/delete-icon.png'
 import image from '../icons/image-icon.png'
 import Countdown from 'react-countdown';
+import { RemoveAlert } from '../Emailing/RemoveAlert';
 
 const TaskVisual = ({input, index, deleteTask, editList}) => {
     const {currentUser} = useContext(AuthContext);
@@ -35,6 +36,7 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
     const handleDelete = () => {
        
         remove(ref(db, 'tasks/'+ currentUser.uid + '/' + input.key));
+        RemoveAlert(input.key)
         deleteTask(index);
     }
 

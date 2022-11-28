@@ -1,5 +1,5 @@
-export function sendemail(Name,Description,eventTime,alertTime,key){
-    let email = {
+export function UpdateAlert(Name,Description,eventTime,alertTime,key){
+    let alert = {
         To:localStorage.getItem("email"),
         Subject:`Tracker Notification`,
         Text:`Your Task : ${Name}<br>
@@ -8,14 +8,12 @@ export function sendemail(Name,Description,eventTime,alertTime,key){
         EventTime:eventTime,
         AlertTime:alertTime,
         Key:key
-
     }
-    fetch('http://localhost:4000/sendEmail',{
+    fetch('http://localhost:4000/updateAlert',{
         method:'POST',
         headers:{'Content-Type': 'application/json'},
-        body:JSON.stringify(email)
-        
+        body:JSON.stringify(alert)
     }).then((resp)=>{
-        console.log('email sent',resp)
+        console.log('alert removed sent',resp)
     })
 }

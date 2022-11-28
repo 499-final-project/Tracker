@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import DateTimePicker from 'react-datetime-picker';
+import { UpdateAlert } from '../Emailing/UpdateAlert';
 
 const EditTask = ({modal, toggle, editTask, input}) => {
     const [taskName, setTaskName] = useState('');
@@ -8,6 +9,7 @@ const EditTask = ({modal, toggle, editTask, input}) => {
     const [key, setKey] = useState('')
     const [startdate, setStartDate] = useState(new Date());
     const [enddate, setEndDate] = useState(new Date());
+    const [alertTime, setAlertTime] = useState('');
     let taskBox = 
     {
         Name:'',
@@ -15,7 +17,8 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         key: '',
         Image: '',
         Startdate: '',
-        Enddate: ''
+        Enddate: '',
+        AlertTime: ""
     }
 
     const handleChange = (e) => {
@@ -30,7 +33,10 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         {
             setDescription(value)
         }
-
+        else if (name === "alertTime")
+        {
+            setAlertTime(value)
+        }
 
     }
 
@@ -49,8 +55,9 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         taskBox.key = key
         taskBox.Startdate = startdate.getTime()
         taskBox.Enddate = enddate.getTime()
+        taskBox.AlertTime= alertTime
         editTask(taskBox)
-        
+        UpdateAlert(taskName,description,enddate,alertTime,key)
     }
     
     return (
@@ -75,6 +82,18 @@ const EditTask = ({modal, toggle, editTask, input}) => {
             <div >
                 <label>end</label>
                 <DateTimePicker  onChange={setEndDate}  value={enddate} /> 
+            </div>
+            <div className = "form-group">
+                <label>Notify Me Before End(Optional)</label>
+                <select className = "form-control"  onChange = {handleUpdate} name = "alertTime" defaultValue={alertTime||"0"}>
+                    <option value="0">--Choose Alert--</option>
+                    <option value="1">1 week before</option>
+                    <option value="2">1 day before</option>
+                    <option value="3">12 hours before</option>
+                    <option value="4">1 hour before</option>
+                    <option value="5">30 minutes before</option>
+                    <option value="6">10 minutes before</option>
+                </select>
             </div>
             </ModalBody>
             <ModalFooter>

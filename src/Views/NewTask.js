@@ -11,7 +11,7 @@ import  DateTimePicker  from 'react-datetime-picker';
     const [description, setDescription] = useState('');
     const [startdate, setStartDate] = useState(new Date());
     const [enddate, setEndDate] = useState(new Date());
-    const [notify, setNotify] = useState('');
+    const [alertTime, setAlertTime] = useState('');
 
 let taskBox = 
     {
@@ -21,7 +21,7 @@ let taskBox =
         Image: '',
         Startdate: '',
         Enddate: '',
-        Notify: '',
+        AlertTime: '',
     }
  
     //function to turn string into date
@@ -41,9 +41,9 @@ let taskBox =
         {
             setDescription(value)
         }
-        else if (name === "notify")
+        else if (name === "alertTime")
         {
-            setNotify(value)
+            setAlertTime(value)
         }
         
         
@@ -56,10 +56,10 @@ let taskBox =
         taskBox.Description = description
         taskBox.Startdate = startdate.getTime()
         taskBox.Enddate = enddate.getTime()
-        taskBox.Notify= notify
+        taskBox.AlertTime= alertTime
         taskBox.key = writeTaskData(currentUser.uid, taskName, description, taskBox.Startdate, taskBox.Enddate)
         add(taskBox)
-        sendemail(taskName,description,startdate,notify);
+        sendemail(taskName,description,enddate,alertTime,taskBox.key);
     }
     
     return (
@@ -85,14 +85,15 @@ let taskBox =
                 <DateTimePicker  onChange={setEndDate}  value={enddate} /> 
             </div>
             <div className = "form-group">
-                <label>Notify Me (Optional)</label>
-                <select className = "form-control"  onChange = {handleInput} name = "notify" defaultValue={notify||"0"}>
+                <label>Notify Me Before End(Optional)</label>
+                <select className = "form-control"  onChange = {handleInput} name = "alertTime" defaultValue={alertTime||"0"}>
                     <option value="0">--Choose Alert--</option>
                     <option value="1">1 week before</option>
                     <option value="2">1 day before</option>
                     <option value="3">12 hours before</option>
                     <option value="4">1 hour before</option>
-                    <option value="5">10 minutes before</option>
+                    <option value="5">30 minutes before</option>
+                    <option value="6">10 minutes before</option>
                 </select>
             </div>
             
