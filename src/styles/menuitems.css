@@ -3,7 +3,9 @@
     --text-color-hover: white;
 
     --background-color: white;
-    --nav-color: #4394D1
+    --nav-color: #4394D1;
+    --taskbackground-color: #e0ecf9;
+    --cardheader-color: #F2FAF1;
 }
 
 .dark{
@@ -12,6 +14,8 @@
 
     --background-color:#2A2B33;
     --nav-color: black;
+    --taskbackground-color: #474b6e;
+    --cardheader-color: #28332a;
 }
 
 *{

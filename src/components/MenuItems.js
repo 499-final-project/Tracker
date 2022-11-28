@@ -22,10 +22,21 @@ function MenusItems() {
         document.body.classList.toggle("dark")
         if(document.body.classList.contains("dark")){
             icon.src = sun;
+            //store in local storage
+          
         }else{
             icon.src = moon;
+            //store in local storage
+           
         }
     }
+    
+
+    
+     
+
+    
+
     return (  
         <div className = "menu">
           

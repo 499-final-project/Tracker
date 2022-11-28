@@ -71,7 +71,7 @@
   padding: 10px 10px;
   display : flex;
   flex-direction: column;
-  background-color: #e0ecf9;
+  background-color: var(--taskbackground-color) !important;
   overflow-wrap:anywhere;
   overflow:auto;
   position: relative;
@@ -84,6 +84,7 @@
   height: 30px;
   padding: 1px 1px !important;
   text-align: center;
+  background-color: var(--cardheader-color) !important;
 }
 
 .task-container{
@@ -91,7 +92,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background-color: #ffffff;
+  background-color: var(--background-color) !important;
   padding : 10px 100px;
   overflow-wrap:anywhere;
   overflow:auto;

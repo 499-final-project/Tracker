@@ -122,11 +122,12 @@ search(value);
 
 }       
     
-      
-   
+
+
+
     return (
         <>
-            <div>
+            <div >
                 <h1>Task List</h1>
              <button className = "button-62"   onClick = {() => Popup(true)} >Create Task</button>
              <div>

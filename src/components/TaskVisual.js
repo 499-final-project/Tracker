@@ -45,14 +45,22 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
         PopupImage(false)
     }
 
+   
+  
+    
+
+   
     return (
         
         <div class = "card-wrapper m-sm-5" style={{ display: "flex" }}>
             <div class = "card-top" ></div>
             <div class = "task-holder">
+                
+                
+                    
                 <span class = "card-header" style={{"background-color": "#F2FAF1", "border-radius": "10px"}}>{input.Name}</span>
                 <p className = "mt-3">{input.Description}</p>
-                <p className = "mt-3">Time Left: {<Countdown date={ Date.now() + (input.Enddate-input.Startdate)} />}</p>
+                <p className = "mt-3">Time Left: {<Countdown date={  input.Enddate } />}</p>
                
                 <img src={input.Image} width ="175px" height="175px" style={{ alignSelf: 'center' }} alt={"image1"} 
                 onError={(event) => event.target.style.display = 'none'}
@@ -72,3 +80,5 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
 // <p className = "mt-3">Start: {dateToString(new Date(input.Startdate))}</p>
 //<p className = "mt-3">End: {dateToString(new Date(input.Enddate))}</p>
 export default TaskVisual;
+
+
