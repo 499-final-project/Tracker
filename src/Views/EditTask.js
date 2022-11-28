@@ -85,7 +85,7 @@ const EditTask = ({modal, toggle, editTask, input}) => {
             </div>
             <div className = "form-group">
                 <label>Notify Me Before End(Optional)</label>
-                <select className = "form-control"  onChange = {handleUpdate} name = "alertTime" defaultValue={alertTime||"0"}>
+                <select className = "form-control"  onChange = {handleChange} name = "alertTime" defaultValue={alertTime||"0"}>
                     <option value="0">--Choose Alert--</option>
                     <option value="1">1 week before</option>
                     <option value="2">1 day before</option>
