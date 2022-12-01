@@ -7,7 +7,6 @@ import { db } from '../firebase';
 import NewImage from '../Views/NewImage'
 import edit from '../icons/edit-icon.png'
 import deletes from '../icons/delete-icon.png'
-import image from '../icons/image-icon.png'
 import Countdown from 'react-countdown';
 import { RemoveAlert } from '../Emailing/RemoveAlert';
 
