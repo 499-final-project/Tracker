@@ -75,16 +75,21 @@
   overflow-wrap:anywhere;
   overflow:auto;
   position: relative;
+  font-size: large;
 }
 
 .card-header{
   margin-top: 10px;
   margin-bottom: 10px;
-  max-width: 80px;
   height: 30px;
-  padding: 1px 1px !important;
+  padding: 0px 15px !important;
   text-align: center;
   background-color: var(--cardheader-color) !important;
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  align-items: center;
+  margin: 0px auto;
+  
 }
 
 .task-container{
