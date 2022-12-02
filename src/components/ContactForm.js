@@ -22,7 +22,9 @@ const [taskList,/*setTaskList*/] = useState([])
         <>
        
             <div>
+                {/*}
                 <button className = " mt-3"   onClick = {() => Popup(true)} >Contact</button>
+    */}
             </div>
             
             <NewContact toggle = {toggle} modal = {modal} add = {addTask}/>

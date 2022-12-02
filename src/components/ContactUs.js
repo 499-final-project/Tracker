@@ -1,4 +1,5 @@
 import ContactForm from './ContactForm';
+import '../styles/contact.css';
 
 const ContactUs = () => {
     return (
@@ -8,8 +9,8 @@ const ContactUs = () => {
             <h1>Contact Us</h1>
         </div>
         
-        <div className= "contact info" >
-        <b>Address</b>
+        <div className= "contact_info" >
+        <b>Address:</b>
         <a href=" ">695 Park Ave, New York, NY 10065</a>
         <br></br>
         <b >Email:</b>
