@@ -6,6 +6,7 @@
     --nav-color: #4394D1;
     --taskbackground-color: #e0ecf9;
     --cardheader-color: #F2FAF1;
+    --mobile-menu-icon-color: #4394D1;
 }
 
 .dark{
@@ -16,6 +17,7 @@
     --nav-color: black;
     --taskbackground-color: #474b6e;
     --cardheader-color: #28332a;
+    --mobile-menu-icon-color: #31365f;
 }
 
 *{
@@ -26,15 +28,15 @@ body{
     background-color: var(--background-color) !important;
 }
 
-li a{
-    font-size:20pt;
+.menu li a{
+    font-size: 2.1vw;
     padding-left: 1vw;
     padding-right: 1vw;
     color: var(--text-color);
     text-decoration: none;
 }
 
-li a:hover{
+.menu li a:hover{
     color: var(--text-color-hover);
 }
 
@@ -47,8 +49,12 @@ li a:hover{
     justify-content: center;
     align-items: center;
     padding-right: 20px;
+    overflow:hidden;
+    
 }
-
+.mobilemenu{
+    display: none;
+}
 .arrow{
     display: flex;
     height: 1.5vh;
@@ -69,14 +75,52 @@ li a:hover{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 500px){
-    a{
+@media only screen and (max-width: 800px){
+   .menu a{
         display: none;
     }
-    .search{
-        display: none;
-    }
+   
     .arrow{
         display: none;
+    }
+   .menu{
+        display: none
+    }
+    .mobilemenu{
+        display: flex;
+       flex-direction: column;
+       justify-content: center;
+       position: absolute;
+       top: 100px;
+       right:0;
+       width: 100%;
+       z-index: 1;
+       background-color: var(--nav-color);
+    }
+    .mobilemenu li a{
+        display: block;
+        padding: 10px;
+        font-size: 2.5vw;
+        color: var(--text-color);
+        text-decoration: none; 
+    }
+    .mobilemenu li a:hover{
+        color: var(--text-color-hover);
+    }
+   .mobilemenu #toggleDark1{
+        height: auto;
+        width: 15%;
+    }
+    
+   .mobilemenu #toggleDark1:hover{
+        cursor: pointer;
+    }
+    #toggleDark{
+        height: auto;
+        width: 15%;
+    }
+    
+    #toggleDark:hover{
+        cursor: pointer;
     }
 }
