@@ -58,13 +58,17 @@ const TaskVisual = ({input, index, deleteTask, editList}) => {
                 
                     
                 <span class = "card-header" style={{"background-color": "#F2FAF1", "border-radius": "10px"}}>{input.Name}</span>
-                <p className = "mt-3">{input.Description}</p>
-                <p className = "mt-3">Time Left: {<Countdown date={  input.Enddate } />}</p>
+                <p className = "mt-3" style = {{"padding": "0px"}}>{input.Description}</p>
+                <p className = "mt-3" > Time Left: {<Countdown date={  input.Enddate } />}</p>
                 
                 
                 <div style={{"position": "static", "right" : "20px", "bottom" : "20px"}}>
-                <button  onClick = {() => Popup(true)}  ><img className = "edit" img style = {{ width: 25, height: 25 }} src = {edit} alt = "Edit" /></button>
+                    <button className = "button-63" onClick = {() => Popup(true)} >Edit</button>
+                    <button className = "button-63" onClick = {handleDelete}>Delete</button>
+                    {/*
+                    <button  onClick = {() => Popup(true)}  ><img className = "edit" img style = {{ width: 25, height: 25 }} src = {edit} alt = "Edit" /></button>
                     <button  onClick = {handleDelete}><img className = "deletes" img style = {{ width: 25, height: 25 }} src = {deletes} alt = "Delete" /></button>
+                     */}
                 </div>
         </div>
         <EditTask modal = {modal} toggle = {toggle} editTask = {editTask} input = {input} />
