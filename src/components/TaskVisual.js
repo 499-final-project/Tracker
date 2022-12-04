@@ -5,8 +5,6 @@ import { AuthContext } from '../Authentication/AuthContext';
 import { db } from '../firebase';
 //import { dateToString } from '../helper/getDate';
 import NewImage from '../Views/NewImage'
-import edit from '../icons/edit-icon.png'
-import deletes from '../icons/delete-icon.png'
 import Countdown from 'react-countdown';
 import { RemoveAlert } from '../Emailing/RemoveAlert';
 
