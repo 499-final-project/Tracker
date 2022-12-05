@@ -129,19 +129,16 @@ search(value);
         <>
             <div >
                 <h1>Task List</h1>
-             <button className = "button-62"   onClick = {() => Popup(true)} >Create Task</button>
-             <div>
-
-             </div>
             <div>
-                
                 <div className = 'bar'>
                 {location.pathname === '/TaskList' ?  <>
-            <input className ='search' type="search" placeholder="Search" onChange={handleSearchChange} ></input></>  : null}
+                <input className ='search' type="search" placeholder="Search" onChange={handleSearchChange} ></input></>  : null}
+                </div>
+                 
             </div>
-               
-               
-            </div>
+            <div>
+                <button className = "button-62"   onClick = {() => Popup(true)} >Create Task</button>
+             </div>
             <div className = "task-container "> 
             <br></br>
                 
