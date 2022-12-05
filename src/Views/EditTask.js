@@ -46,7 +46,8 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         setKey(input.key)
         setStartDate(new Date(input.Startdate))
         setEndDate(new Date(input.Enddate))
-    },[input.Name, input.Description, input.key, input.Startdate, input.Enddate])
+        setAlertTime(input.AlertTime)
+    },[input.Name, input.Description, input.key, input.Startdate, input.Enddate, input.AlertTime])
 
     const handleUpdate = (e) => {
         e.preventDefault();
