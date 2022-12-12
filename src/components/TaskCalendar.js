@@ -114,7 +114,7 @@ useEffect(() => {
     return (
 
     
-  <div>
+  <div class= "calendar">
     <Calendar
       localizer={localizer}
       events={events}
