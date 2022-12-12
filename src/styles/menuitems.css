@@ -107,12 +107,12 @@ body{
     .mobilemenu li a:hover{
         color: var(--text-color-hover);
     }
-   .mobilemenu #toggleDark1{
+    #toggleDark1{
         height: auto;
         width: 15%;
     }
     
-   .mobilemenu #toggleDark1:hover{
+    #toggleDark1:hover{
         cursor: pointer;
     }
     #toggleDark{
