@@ -39,7 +39,7 @@ function MenusItems() {
             <li><Link to= "/TaskCalendar">Task Calendar</Link></li>     
             <li><Link to= "/ContactUs">Contact Us</Link></li>
             <li>{ currentUser ? <Logout/> : <SignInWithGoogle1/>}</li> 
-            <li><img id="toggleDark" onClick={toggle} alt="Toggle Pictures" src={moon} /></li>
+            <li><img id="toggleDark" onClick={toggle} alt="Toggle Pictures" src={moon} /> </li>
         </div>
     
        
