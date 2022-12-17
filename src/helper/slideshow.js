@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { slideData } from './slideshowdata'
 import React from 'react'
 import '../styles/slideshow.css'
@@ -27,7 +27,7 @@ export default function Slideshow() {
           <div className={index === current ? 'slide active' : 'slide'} key={index}>
             {index === current && (
               <>
-                <img src={slide.image} alt='travel image' className='image' />
+                <img src={slide.image} className='image' />
                 <p>{slide.desc}</p>
               </>
             )}
