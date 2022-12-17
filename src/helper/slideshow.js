@@ -27,7 +27,7 @@ export default function Slideshow() {
           <div className={index === current ? 'slide active' : 'slide'} key={index}>
             {index === current && (
               <>
-                <img src={slide.image} className='image' />
+                <img src={slide.image} alt='homeimage' className='image' />
                 <p>{slide.desc}</p>
               </>
             )}
