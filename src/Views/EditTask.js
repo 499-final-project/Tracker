@@ -58,7 +58,7 @@ const EditTask = ({modal, toggle, editTask, input}) => {
         taskBox.Enddate = enddate.getTime()
         taskBox.AlertTime= alertTime
         editTask(taskBox)
-        UpdateAlert(taskName,description,enddate,alertTime,key)
+        UpdateAlert(taskName,description,startdate,alertTime,key)
     }
     
     return (
