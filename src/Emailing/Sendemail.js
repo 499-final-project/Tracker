@@ -9,7 +9,7 @@ export function sendemail(Name,Description,eventTime,alertTime,key){
         Key:key
 
     }
-    fetch('http://35.230.161.28:8080/sendEmail',{
+    fetch('http://localhost:4000/sendEmail',{
         method:'POST',
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify(email)

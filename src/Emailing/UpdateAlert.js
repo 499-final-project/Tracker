@@ -8,7 +8,7 @@ export function UpdateAlert(Name,Description,eventTime,alertTime,key){
         AlertTime:alertTime,
         Key:key
     }
-    fetch('http://35.230.161.28:8080/updateAlert',{
+    fetch('http://localhost:4000/updateAlert',{
         method:'POST',
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify(alert)
