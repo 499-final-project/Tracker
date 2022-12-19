@@ -14,7 +14,7 @@ const ContactUs = () => {
         <a href=" ">695 Park Ave, New York, NY 10065</a>
         <br></br>
         <b >Email:</b>
-        <a href=" ">exampleEmail@email.com</a>
+        <a href=" ">trackertesting499@gmail.com</a>
         <br></br>
         <b>Phone: </b>
         <a href="tel:212-772-4000">212-123-1234</a>
